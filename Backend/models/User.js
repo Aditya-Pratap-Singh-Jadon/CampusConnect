@@ -8,7 +8,13 @@ const UserSchema = new mongoose.Schema({
     unique: true,
     match: [/^[\w.]+@(vitstudent\.ac\.in|vit\.ac\.in)$/, 'Only VIT email addresses are allowed']
   },
-  password: { type: String, required: true },
+  
+  // 1. CHANGED: Removed 'required: true' so Google users can register without a password
+  password: { type: String },
+  
+  // 2. ADDED: This keeps track of whether they used Google or the manual form
+  authProvider: { type: String, enum: ['manual', 'google'], default: 'manual' },
+
   role: { type: String, enum: ['student', 'mentor'], default: 'student' },
 
   // Common profile fields
