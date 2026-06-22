@@ -4,7 +4,7 @@ import { createPortal } from "react-dom";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import adityaImg from "./assets/Images/aditya_to_up.jpeg";
 import sithiImg from "./assets/Images/Vignesh_to_up.jpeg";
-
+import sahilImg from "./assets/Images/PP.jpeg";
 const teamMembers = [
   {
     name: "Aditya Pratap Singh Jadon aka Adi",
@@ -22,8 +22,8 @@ const teamMembers = [
   },
   {
     name: "Sahil Shah",
-    bio: ".",
-    image: "",
+    bio: "One line of code at a time.",
+    image: sahilImg,
     github: "https://github.com/IGLTrevo0",
     linkedin:
       "https://www.linkedin.com/in/sahil-shah-0785a9339?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
