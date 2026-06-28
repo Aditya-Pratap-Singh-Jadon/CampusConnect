@@ -1,4 +1,4 @@
-import logo from "./assets/Images/ccicon.png";
+import logo from "./assets/Images/ccicon.webp";
 import "./Navbar.css";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -36,7 +36,13 @@ function Navbar() {
     <>
       <nav className="navbar">
         <div className="name_img">
-          <img src={logo} alt="Logo_cc" />
+          <img
+            src={logo}
+            alt="Logo_cc"
+            width="64"
+            height="64"
+            fetchPriority="high"
+          />
 
           <h1 className="title" onClick={() => navigate("/")}>
             {WorkingTitle}

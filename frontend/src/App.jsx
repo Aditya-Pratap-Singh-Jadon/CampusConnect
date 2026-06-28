@@ -1,28 +1,35 @@
 import "./App.css";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 import Hero from "./components/LandingPage/Hero";
 import Stats from "./components/LandingPage/Stats";
 import Marquee from "./components/LandingPage/Marquee";
 import Problems from "./components/LandingPage/Problems";
-import Footer from "./Footer";
-import Auth from "./Auth";
-import SearchPage from "./components/Search/SearchPage";
-import Profile from "./components/Profile/Profile";
-import Dashboard from "./components/Dashboard&Post/Dashboard";
-import VerifyOTP from "./components/Auth/VerifyOTP";
-import CompleteProfile from "./components/Profile/CompleteProfile";
-import PostPage from "./components/Dashboard&Post/PostPage";
 import { isAuthenticated } from "./utils/auth";
-import MeetTheTeam from "./Meet_the_team";
+
+import { Suspense, lazy } from "react";
+
+const Auth = lazy(() => import("./Auth"));
+const SearchPage = lazy(() => import("./components/Search/SearchPage"));
+const Profile = lazy(() => import("./components/Profile/Profile"));
+const Dashboard = lazy(() => import("./components/Dashboard&Post/Dashboard"));
+const VerifyOTP = lazy(() => import("./components/Auth/VerifyOTP"));
+const CompleteProfile = lazy(
+  () => import("./components/Profile/CompleteProfile"),
+);
+const PostPage = lazy(() => import("./components/Dashboard&Post/PostPage"));
+const MeetTheTeam = lazy(() => import("./Meet_the_team"));
 
 function ProtectedRoute({ children }) {
-  console.log("TOKEN:", localStorage.getItem("token"));
-  console.log("AUTH:", isAuthenticated());
   if (!isAuthenticated()) {
     return <Navigate to="/auth" replace />;
   }
   return children;
+}
+
+function PageLoader() {
+  return <div className="page-loader">Loading...</div>;
 }
 
 function LandingPage() {
@@ -44,8 +51,10 @@ function LandingPage() {
 function AppLayout({ children }) {
   return (
     <>
-      <Navbar />
-      {children}
+      <Navbar />'
+      <main className="app-content">
+        <Suspense fallback={<PageLoader />}>{children}</Suspense>
+      </main>
       <Footer />
     </>
   );
@@ -56,9 +65,23 @@ function App() {
     <Routes>
       <Route path="/" element={<LandingPage />} />
 
-      <Route path="/auth" element={<Auth />} />
+      <Route
+        path="/auth"
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <Auth />
+          </Suspense>
+        }
+      />
 
-      <Route path="/verify-otp" element={<VerifyOTP />} />
+      <Route
+        path="/verify-otp"
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <VerifyOTP />
+          </Suspense>
+        }
+      />
 
       <Route
         path="/complete-profile"
@@ -126,10 +149,9 @@ function App() {
       <Route
         path="/team"
         element={
-            <AppLayout>
-              <MeetTheTeam />
-            </AppLayout>
-          
+          <AppLayout>
+            <MeetTheTeam />
+          </AppLayout>
         }
       />
     </Routes>
