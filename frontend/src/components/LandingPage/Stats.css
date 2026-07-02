@@ -2,11 +2,17 @@
   margin-top: 20px;
   flex: 1;
   padding: 15px 20px;
-  border: 2px solid black;
+  border: 2px solid var(--border);
   border-radius: 10px;
   backdrop-filter: blur(10px);
-  box-shadow: 3px 3px 0px black;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
 }
+.stat-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-md);
+}
+
 .outer-container {
   display: flex;
   gap: 20px;
@@ -18,13 +24,14 @@
   font-size: 3rem;
   font-family: "Outfit", sans-serif;
   font-weight: 900;
+  color: var(--text);
 }
 .stat-tag {
   margin-top: 8px;
   font-family: "Inter", sans-serif;
   font-weight: 600;
   font-size: 1.5rem;
-  color: #424141;
+  color: var(--text-secondary);
 }
 @media (max-width: 1024px) {
   .num-stat {

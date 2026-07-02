@@ -1,7 +1,8 @@
+import "./styles/theme.css";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-
+import { ThemeProvider } from "./context/ThemeContext";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import axios from "axios";
 import { getStoredToken, clearAuth } from "./utils/auth";
@@ -38,9 +39,11 @@ const googleClientId = import.meta.env.VITE_GOOGLE_CLIENT_ID;
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <GoogleOAuthProvider clientId={googleClientId}>
+      <ThemeProvider>
       <BrowserRouter>
         <App />
       </BrowserRouter>
+       </ThemeProvider>
     </GoogleOAuthProvider>
   </StrictMode>,
 );

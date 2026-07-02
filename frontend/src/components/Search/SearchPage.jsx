@@ -97,21 +97,21 @@ function SearchPage() {
 
           <div className="role-filters">
             <button
-              className={selectedRole === "All" ? "active-role" : ""}
+              className={selectedRole === "All" ? "active-role" : "nonactive-role"}
               onClick={() => handleRoleChange("All")}
             >
               All
             </button>
 
             <button
-              className={selectedRole === "student" ? "active-role" : ""}
+              className={selectedRole === "student" ? "active-role" : "nonactive-role"}
               onClick={() => handleRoleChange("student")}
             >
               Students
             </button>
 
             <button
-              className={selectedRole === "alumni" ? "active-role" : ""}
+              className={selectedRole === "alumni" ? "active-role" : "nonactive-role"}
               onClick={() => handleRoleChange("alumni")}
             >
               Alumni
