@@ -2,7 +2,7 @@
 1. CampusConnect Design System
     a) Light Theme Variables
     b) Dark Theme Variables
-2. Don't hardcode colors inside component CSS.
+2. Don't hardcode colors inside component's CSS.
 3. Always consume variables defined here.
 4. Create new here if needed. */
 
@@ -154,7 +154,7 @@
   --footer-bg: #171717;
   --footer-text: #f5f5f5;
 
-  --shadow-lg: 0 14px 28px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 8px 12px rgba(253, 232, 43, 0.564);
   --shadow-md: 0 8px 18px rgba(0, 0, 0, 0.3);
   --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.24);
   --shadow-vsm: 0 2px 6px rgba(0, 0, 0, 0.18);
