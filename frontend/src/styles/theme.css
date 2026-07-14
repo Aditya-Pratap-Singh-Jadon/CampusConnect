@@ -1,0 +1,221 @@
+/* For future maintainers of CampusConnect 
+1. CampusConnect Design System
+    a) Light Theme Variables
+    b) Dark Theme Variables
+2. Don't hardcode colors inside component's CSS.
+3. Always consume variables defined here.
+4. Create new here if needed. */
+
+/* ==========================================
+   LIGHT THEME
+========================================== */
+
+:root {
+  /*==Global main==*/
+  /* Accent */
+  --primary: #f4c542;
+  --primary-hover: #e8b72a;
+
+  /* Backgrounds */
+  --bg: #f8f9fa; /* Bright Snow */
+  --surface: #fefefc; /* Feather White */
+  --surface-alt: #f6fcfd; /* Arctic Veil */
+  --surface-hover: #f2f6fc; /* Ice Mist */
+
+  /* Text */
+  --text: #212529; /* Primary */
+  --text-secondary: #495057; /* Secondary */
+  --text-muted: #6c757d; /* Less important */
+  --text-disabled: #adb5bd; /* Placeholder */
+  --text-on-primary: #212529;
+  --text-on-primary-btn: #e4ebf3;
+
+  /* Border */
+  --border: #212529;
+
+  /* Shadows */
+  --shadow-lg: 4px 4px 0 var(--border);
+  --shadow-md: 3px 3px 0 var(--border);
+  --shadow-sm: 2px 2px 0 var(--border);
+  --shadow-vsm: 1px 1px 0 var(--border);
+  --shadow-none: 0 0 0 transparent;
+
+  /*==Global Components==*/
+  /* Buttons */
+  --btn-bg: #212529;
+  --btn-hover: #343a40;
+  --btn-text: #ffffff;
+
+  /* Links */
+  --link: #2563eb;
+  --link-hover: #1d4ed8;
+
+  /* Success */
+  --success: #dcfce7;
+  --success-text: #166534;
+  --success-border: #166534;
+
+  /* Warning */
+  --warning: #fef3c7;
+  --warning-text: #92400e;
+  --warning-border: #92400e;
+
+  /* Error */
+  --error: #fee2e2;
+  --error-text: #991b1b;
+  --error-border: #991b1b;
+
+  /*==Page Contents==*/
+  /* Navbar */
+  --navbar-bg: rgba(248, 251, 255, 0.92);
+  --navbar-shadow: rgba(0, 0, 0, 0.12);
+  --navbar-dropdown-bg: #ffffff;
+  --navbar-dropdown-hover: #fff4f4;
+  --navbar-mobile-bg: #fff4d9;
+  --navbar-mobile-hover: #ffe185;
+  --navbar-hover: #2563eb;
+  --navbar-btn-bg: #2a313c;
+  --navbar-btn-hover: #1e242d;
+
+  /*Footer*/
+  --footer-bg: #2a313c;
+  --footer-text: #f8f6f0;
+  --footer-text-secondary: #c7ccd3;
+  --footer-link: var(--primary);
+  --footer-link-hover: var(--primary-hover);
+  --footer-social-hover: var(--primary);
+
+  /* Problems Section */
+  --problem-highlight-bg: #2a313c;
+  --problem-highlight-text: var(--primary);
+  --problem-highlight-border: var(--primary);
+  --problem-card-bg: #f2f8fc;
+  --problem-icon-bg: #fff4d6;
+
+  /*Stat Cards*/
+  --stat-card-students: #d5e6e1;
+  --stat-card-alumni: #ffb648;
+  --stat-card-teams: #cfe4f8;
+
+  /*Marquee*/
+  --marquee-bg: #2a313c;
+  --marquee-text: #f8f6f0;
+
+  /* Authentication */
+  --auth-bg: var(--bg);
+  --auth-card-bg: var(--surface);
+  --auth-card-border: var(--border);
+  --auth-input-bg: var(--surface);
+  --auth-input-border: #c7cdd6;
+  --auth-input-focus: var(--primary);
+  --auth-subtitle: var(--text-secondary);
+  --auth-divider: #d7dde6;
+  --auth-primary-btn: var(--btn-bg);
+  --auth-primary-btn-hover: var(--btn-hover);
+  --auth-secondary-btn: var(--primary);
+  --auth-secondary-btn-hover: var(--primary-hover);
+  --auth-card-shadow: var(--navbar-shadow);
+
+  /*Profile*/
+  --profile-banner-start: var(--border);
+  --profile-banner-middle: #d97706;
+  --profile-banner-end: #4b5563;
+  --add-project-hover: #fff7dd;
+
+  --role-color: #f59e0b;
+}
+
+/* ==========================================
+   DARK THEME
+========================================== */
+
+[data-theme="dark"] {
+  --bg: #0f171f; /* Shadow Dept */
+  --surface: #1C2128; /* Black Denim */
+  --surface-alt: #212529; /* Carbon Black */
+  --surface-hover: #343a40; /* Gunmetal */
+
+  --text: #ffffff;
+  --text-secondary: #ced4da;
+  --text-muted: #adb5bd;
+  --text-disabled: #6c757d;
+  --text-on-primary: #2a2a2e;
+  --text-on-primary-btn: #2a2a2e;
+  --text-on-dark:#ffffff;
+
+  --primary: #f4c542;
+  --primary-hover: #ffd54f;
+
+  --link: #ffd54f;
+  --link-hover: #ffe082;
+
+  --border: #495057;
+  --border-light: #444444;
+  --footer-bg: #171717;
+  --footer-text: #f5f5f5;
+
+  --shadow-lg: 0 8px 12px rgba(253, 232, 43, 0.564);
+  --shadow-md: 0 8px 18px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.24);
+  --shadow-vsm: 0 2px 6px rgba(0, 0, 0, 0.18);
+  --shadow-none: none;
+
+  --btn-bg: #f4c542;
+  --btn-hover: #ffd54f;
+  --btn-text: #212529;
+
+  --link: #f4c542;
+  --link-hover: #ffd54f;
+
+  --navbar-bg: rgba(35, 41, 50, 0.92);
+  --navbar-shadow: rgba(0, 0, 0, 0.45);
+  --navbar-dropdown-bg: #2d3642;
+  --navbar-dropdown-hover: #404b5c;
+  --navbar-mobile-bg: #2b3440;
+  --navbar-mobile-hover: #384252;
+  --navbar-hover: var(--primary);
+  --navbar-btn-bg: var(--primary);
+  --navbar-btn-text: #1f2937;
+  --navbar-btn-hover: var(--primary-hover);
+
+  --footer-bg: #111827;
+  --footer-text: #f9fafb;
+  --footer-text-secondary: #bfc7d4;
+  --footer-link: var(--primary);
+  --footer-link-hover: var(--primary-hover);
+  --footer-social-hover: var(--primary-hover);
+
+  --problem-highlight-bg: var(--primary);
+  --problem-highlight-text: #1e242d;
+  --problem-highlight-border: var(--primary);
+  --problem-card-bg: #263847;
+  --problem-icon-bg: #344a5f;
+
+  --stat-card-students: #314943;
+  --stat-card-alumni: #c98321;
+  --stat-card-teams: #35506a;
+
+  --marquee-bg: #111827;
+  --marquee-text: #f9fafb;
+
+  --auth-bg: var(--bg);
+  --auth-card-bg: #242b35;
+  --auth-card-border: #4b5563;
+  --auth-input-bg: #2f3845;
+  --auth-input-border: #556170;
+  --auth-input-focus: var(--primary);
+  --auth-subtitle: var(--text-secondary);
+  --auth-divider: #414b57;
+  --auth-primary-btn: var(--primary);
+  --auth-primary-btn-hover: var(--primary-hover);
+  --auth-secondary-btn: var(--primary);
+  --auth-secondary-btn-hover: var(--primary-hover);
+  --auth-card-shadow: var(--navbar-shadow);
+
+  --profile-banner-start: #f4c542;
+  --profile-banner-middle: #b45309;
+  --profile-banner-end: #374151;
+  --add-project-hover: #363220;
+
+  --role-color: #fbbf24;
+}

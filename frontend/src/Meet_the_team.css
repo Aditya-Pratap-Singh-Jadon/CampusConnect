@@ -17,9 +17,10 @@
 }
 
 .team-header span {
-  background: #f4c542;
+  background: var(--primary);
+  color: var(--text-on-primary);
   padding: 4px 12px;
-  border: 2px solid #111;
+  border: 2px solid var(--border);
   display: inline-block;
   transform: rotate(-2deg);
 }
@@ -27,7 +28,7 @@
 .team-header p {
   max-width: 700px;
   margin: 20px auto 0;
-  color: #555;
+  color: var(--text-secondary);
   font-size: 1.1rem;
   line-height: 1.7;
 }
@@ -43,18 +44,20 @@
 }
 
 .team-card {
-  background: white;
-  border: 2px solid #111;
+  background: var(--surface);
+  border: 2px solid var(--border);
   border-radius: 20px;
-  box-shadow: 5px 5px 0 #111;
+  box-shadow: var(--shadow-md);
   padding: 25px;
   text-align: center;
-  transition: 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.18s ease;
 }
 
 .team-card:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 7px 7px 0 #111;
+  box-shadow: var(--shadow-lg);
 }
 
 /* =========================
@@ -66,13 +69,16 @@
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #f4c542;
+  border: 4px solid var(--primary);
   margin-bottom: 20px;
   cursor: zoom-in;
-  transition: 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .team-avatar:hover {
+  border: 4px solid var(--primary-hover);
   transform: scale(1.05);
 }
 
@@ -80,8 +86,9 @@
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  border: 4px solid #111;
-  background: #f4c542;
+  border: 4px solid var(--border);
+  background: var(--primary);
+  color: var(--text-on-primary);
   margin: 0 auto 20px;
 
   display: flex;
@@ -91,9 +98,7 @@
   font-family: "Outfit", sans-serif;
   font-size: 2.5rem;
   font-weight: 900;
-
-  color: #111;
-  box-shadow: 3px 3px 0 #111;
+  box-shadow: var(--shadow-md);
 }
 
 /* =========================
@@ -107,13 +112,13 @@
 }
 
 .team-role {
-  color: #f59e0b;
+  color: var(--role-color);
   font-weight: 700;
   margin-bottom: 15px;
 }
 
 .team-bio {
-  color: #555;
+  color: var(--text-secondary);
   line-height: 1.6;
   min-height: 80px;
 }
@@ -131,13 +136,15 @@
 
 .team-links a {
   font-size: 1.5rem;
-  color: #111;
-  transition: 0.2s ease;
+  color: var(--text);
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .team-links a:hover {
-  transform: scale(1.1);
-  color: #2563eb;
+  transform: scale(1.08);
+  color: var(--link);
 }
 
 /* =========================
@@ -169,7 +176,7 @@
   border-radius: 50%;
   object-fit: cover;
 
-  border: 5px solid white;
+  border: 5px solid var(--surface);
 
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
 

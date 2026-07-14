@@ -17,11 +17,11 @@
   display: inline-block;
   margin-top: 10px;
   padding: 5px 15px;
-  color: #ffd54f;
-  background-color: black;
-  border: 3px solid #ffd54f;
+  color: var(--problem-highlight-text);
+  background-color: var(--problem-highlight-bg);
+  border: 3px solid var(--problem-highlight-border);
   border-radius: 8px;
-  box-shadow: 3px 3px 0px #ffd54f;
+  box-shadow: var(--shadow-sm);
 }
 
 .problem-description {
@@ -32,7 +32,7 @@
   text-align: center;
   font-size: 1.2rem;
   line-height: 1.7;
-  color: #2f2f2f;
+  color:var(--text);
 }
 
 .problem-cards {

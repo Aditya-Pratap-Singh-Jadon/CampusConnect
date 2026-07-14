@@ -3,6 +3,8 @@ import "./Navbar.css";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { isAuthenticated, clearAuth } from "./utils/auth";
+import { Sun, Moon } from "lucide-react";
+import { useTheme } from "./context/ThemeContext";
 
 const WorkingTitle = "Campus Connect";
 
@@ -12,6 +14,8 @@ function Navbar() {
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
+
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     function handleResize() {
@@ -63,6 +67,22 @@ function Navbar() {
               </ul>
             </div>
           )}
+          
+          <button
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+          >
+            <Sun
+              size={18}
+              className={`theme-icon sun ${theme === "light" ? "active" : ""}`}
+            />
+
+            <Moon
+              size={18}
+              className={`theme-icon moon ${theme === "dark" ? "active" : ""}`}
+            />
+          </button>
 
           <div className="buttons">
             {!isLoggedIn ? (
