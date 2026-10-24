@@ -82,16 +82,17 @@ function SearchPage() {
           </span>
           <input
             type="text"
+            aria-label="Search by skill, domain, or name"
             value={searchTerm}
             onChange={handleSearchChange}
             placeholder="Search by skill, domain, or name..."
           />
-          <button className="search-btn" type="button">
+          <button className="search-btn" type="button" onClick={() => document.getElementById('search-results')?.scrollIntoView({ behavior: 'smooth' })}>
             Search
           </button>
         </div>
       </section>
-      <section className="discovery-section">
+      <section className="discovery-section" id="search-results">
         <div className="sidebar">
           <h3>Roles</h3>
 

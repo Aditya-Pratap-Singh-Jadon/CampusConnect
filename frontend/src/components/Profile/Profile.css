@@ -10,6 +10,7 @@
 
 .profile-page {
   max-width: 1200px;
+  width: calc(100% - 32px);
   margin: 120px auto 40px;
   background: var(--surface);
   border: 2px solid var(--border);
@@ -150,7 +151,7 @@
 
 .profile-content {
   display: grid;
-  grid-template-columns: 320px 1fr;
+  grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
   gap: 32px;
   padding: 40px 24px;
 }
@@ -265,7 +266,7 @@
 
 .profile-projects-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
 }
 
@@ -312,6 +313,12 @@
 }
 
 @media (max-width: 480px) {
+  .profile-page { width: calc(100% - 16px); }
+  .profile-banner { padding: 12px 12px 0; }
+  .profile-section { padding-inline: 16px; }
+  .profile-content { padding: 24px 12px; }
+  .profile-card { padding: 16px; }
+  .profile-name { overflow-wrap: anywhere; }
   .profile-section {
     margin-top: -50px;
   }

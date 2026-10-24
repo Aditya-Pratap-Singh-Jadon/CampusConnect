@@ -30,7 +30,6 @@ export default function Profile() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [repos, setRepos] = useState([]);
-  const [loadingRepos, setLoadingRepos] = useState(false);
   const [showAddForm, setShowAddForm] = useState(false);
   const [newProject, setNewProject] = useState({
     title: "",
@@ -41,7 +40,6 @@ export default function Profile() {
 
   useEffect(() => {
     const fetchUser = async () => {
-      setLoadingRepos(false);
       setLoading(true);
       setError("");
       try {
@@ -66,7 +64,6 @@ export default function Profile() {
       try {
         const username = getGithubUsername(user.github);
         if (username) {
-          setLoadingRepos(true);
           const githubRepos = await getGithubRepos(username);
           setRepos(githubRepos);
         } else {
@@ -75,8 +72,6 @@ export default function Profile() {
       } catch (githubError) {
         console.error("Gracefully caught GitHub extraction error:", githubError);
         setRepos([]);
-      } finally {
-        setLoadingRepos(false);
       }
     };
     fetchGitHubData();

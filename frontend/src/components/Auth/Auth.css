@@ -191,6 +191,10 @@
   }
 }
 @media (max-width: 600px) {
+  .auth-container { padding: 20px 12px; }
+  .auth-card { padding: 20px; }
+  .inputgroup { min-width: 0; }
+  .inputgroup input, .inputgroup select { min-width: 0; width: 100%; }
   .input-row {
     flex-direction: column;
     gap: 0;

@@ -3,6 +3,8 @@
   padding-left: 30px;
   font-family: "Inter", sans-serif;
   padding-right: 30px;
+  max-width: 1500px;
+  margin-inline: auto;
 }
 .search-hero {
   text-align: center;
@@ -14,7 +16,7 @@
   font-family: "Outfit", sans-serif;
 }
 .search-hero h1 {
-  font-size: 4rem;
+  font-size: clamp(2rem, 5vw, 4rem);
   font-weight: 800;
 }
 
@@ -56,6 +58,7 @@
 
 .search-box input {
   flex: 1;
+  min-width: 0;
   border: none;
   outline: none;
   padding: 22px 0;
@@ -84,12 +87,11 @@
 
 .discovery-section {
   display: flex;
-  gap: 100px;
+  gap: clamp(20px, 4vw, 60px);
   align-items: flex-start;
 }
 .sidebar {
-  margin-left: 40px;
-  width: 250px;
+  flex: 0 0 250px;
   border: 2px solid var(--border);
   padding: 15px;
   border-radius: 12px;
@@ -123,6 +125,7 @@
 
 .discovery-content {
   flex: 1;
+  min-width: 0;
 }
 .results-count {
   padding: 6px 16px;
@@ -153,12 +156,12 @@
 }
 
 .cards-grid {
-  display: flex;
-  gap: 48px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 24px;
 }
 .user-card {
-  width: 300px;
+  width: 100%;
   min-height: 420px;
   display: flex;
   flex-direction: column;
@@ -306,7 +309,8 @@
     align-items: stretch;
   }
   .sidebar {
-    width: 90%;
+    width: 100%;
+    flex-basis: auto;
   }
 }
 
@@ -323,8 +327,11 @@
     gap: 20px;
     justify-content: center;
   }
-  .user-card {
-    width: 100%;
-    max-width: 350px;
-  }
+  .search-box { gap: 8px; }
+  .search-box input { padding-block: 14px; }
+  .search-btn { margin: 6px; padding: 10px; font-size: 1rem; }
+}
+@media (max-width: 400px) {
+  .search-icon { padding-left: 10px; }
+  .search-btn { padding-inline: 8px; }
 }

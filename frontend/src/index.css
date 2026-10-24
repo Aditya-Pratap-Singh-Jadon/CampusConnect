@@ -4,6 +4,14 @@ html {
   background: var(--bg);
 }
 
+body, #root { min-width: 0; }
+img, svg { max-width: 100%; }
+button, input, select, textarea { font: inherit; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
+}
+
 body {
   margin: 0;
   background: var(--bg);

@@ -58,6 +58,11 @@
 }
 
 @media (max-width: 500px) {
+  .complete-profile-container { padding-inline: 12px; }
+  .complete-profile-card { padding: 16px; }
+  .form-section { padding: 14px; }
+  .form-action-buttons { flex-wrap: wrap; }
+  .form-action-buttons button { flex: 1 1 120px; }
   .form-row-grid {
     grid-template-columns: 1fr;
   }

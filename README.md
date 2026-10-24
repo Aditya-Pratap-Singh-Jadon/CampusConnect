@@ -71,8 +71,6 @@ Students can share:
 - JavaScript
 - CSS
 - React Router
-- Three.js / React Three Fiber
-- GSAP
 
 ## Backend
 - Node.js
@@ -80,7 +78,7 @@ Students can share:
 - REST APIs
 
 ## Database
-- MongoDB
+- MongoDB with Mongoose
 
 ## Development Tools
 - Git
@@ -107,11 +105,12 @@ CampusConnect/
 │   ├── vite.config.js
 │   └── eslint.config.js
 │
-├── backend/
-│   └── ...
-│
-├── database/
-│   └── ...
+├── Backend/
+│   ├── models/
+│   ├── routes/
+│   ├── controllers/
+│   ├── seed-data/
+│   └── scripts/
 │
 ├── docs/
 │   └── ...
@@ -130,13 +129,9 @@ CampusConnect/
 - npm install
 - npm run dev
 
-3. Backend Setup
-- cd backend
-- npm install
-- npm run dev
-
-4. Database
-Database configuration and setup instructions will be added as the database layer is integrated.
+3. Backend and database setup
+- Follow [database setup](docs/database-setup.md) to configure `Backend/.env`, start with `npm start`, validate the demo seed offline, and later run the seed only when authorized.
+- Use the [ten MongoDB Shell demo commands](docs/mongodb-shell-demo.md) after seeding.
 ---
 
 ## Current Modules

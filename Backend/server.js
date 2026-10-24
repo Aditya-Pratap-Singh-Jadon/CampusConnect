@@ -5,7 +5,12 @@ const connectDB = require('./config/db');
 const helmet = require("helmet");
 
 dotenv.config();
-connectDB();
+
+const requiredEnv = ['MONGO_URI', 'JWT_SECRET'];
+const missingEnv = requiredEnv.filter((name) => !process.env[name] || process.env[name].includes('REPLACE_ME'));
+if (missingEnv.length) {
+  throw new Error(`Missing required backend environment variables: ${missingEnv.join(', ')}. Set them in Backend/.env (see Backend/.env.example).`);
+}
 
 const app = express();
 const allowedOrigins = [
@@ -42,7 +47,9 @@ app.get('/', (req, res) => {
 
 if (!process.env.VERCEL) {
   const PORT = process.env.PORT || 5000;
-  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+  connectDB().then(() => app.listen(PORT, () => console.log(`Server running on port ${PORT}`)));
+} else {
+  connectDB();
 }
 
 module.exports = app;

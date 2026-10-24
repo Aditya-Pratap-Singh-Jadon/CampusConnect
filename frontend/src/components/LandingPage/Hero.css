@@ -16,10 +16,12 @@
 
 .left-hero {
   flex: 1;
+  min-width: 0;
 }
 
 .right-hero {
   flex: 1;
+  min-width: 0;
   display: flex;
   justify-content: center;
 }
@@ -222,6 +224,7 @@
   }
 }
 @media (max-width: 480px) {
+  .card2, .card3 { white-space: normal; }
   .hero {
     padding: 0 10px;
   }

@@ -1,0 +1,28 @@
+{
+  "users": [
+    { "_id": "cc0000000000000000000001", "name": "Aarav Demo", "email": "ccdemoaarav@vitstudent.ac.in", "role": "student", "authProvider": "manual", "year": 2, "branch": "Computer Science", "domain": "Frontend", "skills": ["React", "JavaScript", "CSS"], "interests": ["Accessibility", "Open Source"], "bio": "Builds accessible interfaces for student projects.", "isVerified": false },
+    { "_id": "cc0000000000000000000002", "name": "Meera Demo", "email": "ccdemomeera@vitstudent.ac.in", "role": "student", "authProvider": "manual", "year": 3, "branch": "Computer Science", "domain": "Backend", "skills": ["Node.js", "MongoDB", "Express"], "interests": ["APIs", "Distributed Systems"], "bio": "Has built APIs for two campus projects.", "isVerified": false },
+    { "_id": "cc0000000000000000000003", "name": "Ishaan Demo", "email": "ccdemoishaan@vitstudent.ac.in", "role": "student", "authProvider": "manual", "year": 4, "branch": "Information Technology", "domain": "AI/ML", "skills": ["Python", "Machine Learning", "Data Analysis"], "interests": ["Education", "Computer Vision"], "bio": "Researches practical machine learning for education.", "isVerified": false },
+    { "_id": "cc0000000000000000000004", "name": "Diya Demo", "email": "ccdemodiya@vitstudent.ac.in", "role": "student", "authProvider": "manual", "year": 1, "branch": "Electronics", "domain": "Design", "skills": ["Figma", "UI Design", "Prototyping"], "interests": ["Design Systems", "Hackathons"], "bio": "Designs clear mobile experiences and prototypes.", "isVerified": false },
+    { "_id": "cc0000000000000000000005", "name": "Kabir Demo", "email": "ccdemokabir@vitstudent.ac.in", "role": "student", "authProvider": "manual", "year": 3, "branch": "Computer Science", "domain": "Frontend", "skills": ["React", "TypeScript", "Figma"], "interests": ["Hackathons", "Web Performance"], "bio": "Worked on three student hackathon teams.", "isVerified": false },
+    { "_id": "cc0000000000000000000006", "name": "Sana Demo", "email": "ccdemosana@vitstudent.ac.in", "role": "student", "authProvider": "manual", "year": 2, "branch": "Information Technology", "domain": "Backend", "skills": ["Python", "MongoDB", "Node.js"], "interests": ["Civic Tech", "Security"], "bio": "Enjoys data modeling and backend collaboration.", "isVerified": false },
+    { "_id": "cc0000000000000000000007", "name": "Nisha Mentor Demo", "email": "ccdemonisha@vit.ac.in", "role": "alumni", "authProvider": "manual", "domain": "AI/ML", "skills": ["Python", "Machine Learning"], "interests": ["Mentorship", "Research"], "achievements": ["Mentored student research teams"], "alumniAvailability": "open", "bio": "Alumna available to mentor applied AI projects.", "isVerified": false },
+    { "_id": "cc0000000000000000000008", "name": "Rohan Mentor Demo", "email": "ccdemorohan@vit.ac.in", "role": "alumni", "authProvider": "manual", "domain": "Backend", "skills": ["Node.js", "MongoDB", "System Design"], "interests": ["Mentorship", "Open Source"], "achievements": ["Maintained a student open source project"], "alumniAvailability": "limited", "bio": "Alumnus offering backend and project guidance.", "isVerified": false }
+  ],
+  "posts": [
+    { "_id": "cc0000000000000000000101", "creator": "cc0000000000000000000001", "title": "Accessible Campus Events App", "category": "collaboration", "type": "developer", "description": "Looking for a backend collaborator to build an accessible event discovery app.", "skillsNeeded": ["Node.js", "MongoDB"], "status": "open", "teamSize": 3 },
+    { "_id": "cc0000000000000000000102", "creator": "cc0000000000000000000002", "title": "Sustainability Hackathon Team", "category": "hackathon", "type": "designer", "description": "Forming a team to prototype a campus sustainability tracker.", "skillsNeeded": ["Figma", "UI Design"], "status": "open", "hackathonName": "Campus Green Hackathon", "theme": "Sustainability", "teamSize": 4, "deadline": "2027-02-01T00:00:00.000Z" },
+    { "_id": "cc0000000000000000000103", "creator": "cc0000000000000000000003", "title": "Study Resource Recommender", "category": "collaboration", "type": "developer", "description": "Building a recommender prototype for student study materials.", "skillsNeeded": ["React", "Python"], "status": "open", "teamSize": 3 },
+    { "_id": "cc0000000000000000000104", "creator": "cc0000000000000000000005", "title": "Civic Tech Hackathon Team", "category": "hackathon", "type": "teammate", "description": "Seeking a teammate with backend and data skills for a civic tech idea.", "skillsNeeded": ["MongoDB", "Node.js"], "status": "open", "hackathonName": "Build for Good", "theme": "Civic Tech", "teamSize": 4, "deadline": "2027-03-01T00:00:00.000Z" }
+  ],
+  "applications": [
+    { "_id": "cc0000000000000000000201", "post": "cc0000000000000000000101", "applicant": "cc0000000000000000000002", "message": "I can help build the API.", "status": "accepted" },
+    { "_id": "cc0000000000000000000202", "post": "cc0000000000000000000102", "applicant": "cc0000000000000000000004", "message": "I can prototype the mobile flow.", "status": "pending" },
+    { "_id": "cc0000000000000000000203", "post": "cc0000000000000000000104", "applicant": "cc0000000000000000000006", "message": "I have MongoDB experience.", "status": "pending" }
+  ],
+  "connections": [
+    { "_id": "cc0000000000000000000301", "sender": "cc0000000000000000000001", "receiver": "cc0000000000000000000002", "status": "accepted" },
+    { "_id": "cc0000000000000000000302", "sender": "cc0000000000000000000003", "receiver": "cc0000000000000000000007", "status": "accepted" },
+    { "_id": "cc0000000000000000000303", "sender": "cc0000000000000000000005", "receiver": "cc0000000000000000000008", "status": "pending" }
+  ]
+}

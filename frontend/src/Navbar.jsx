@@ -19,7 +19,7 @@ function Navbar() {
 
   useEffect(() => {
     function handleResize() {
-      if (window.innerWidth > 768) {
+      if (window.innerWidth > 1000) {
         setMenuOpen(false);
       }
     }
@@ -29,6 +29,17 @@ function Navbar() {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
+  }, []);
+
+  useEffect(() => {
+    const closeOnEscape = (event) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+        setShowProfileMenu(false);
+      }
+    };
+    document.addEventListener("keydown", closeOnEscape);
+    return () => document.removeEventListener("keydown", closeOnEscape);
   }, []);
 
   const handleLogout = () => {
@@ -48,22 +59,22 @@ function Navbar() {
             fetchPriority="high"
           />
 
-          <h1 className="title" onClick={() => navigate("/")}>
+          <button className="title" type="button" onClick={() => navigate("/")}>
             {WorkingTitle}
-          </h1>
+          </button>
         </div>
 
         <div className="nav-right">
           {isLoggedIn && (
             <div className="nav-lists">
               <ul>
-                <li onClick={() => navigate("/search")}>Search</li>
+                <li><button type="button" onClick={() => navigate("/search")}>Search</button></li>
 
-                <li onClick={() => navigate("/dashboard")}>Dashboard</li>
+                <li><button type="button" onClick={() => navigate("/dashboard")}>Dashboard</button></li>
 
-                <li onClick={() => navigate("/posts")}>Posts</li>
+                <li><button type="button" onClick={() => navigate("/posts")}>Posts</button></li>
 
-                <li onClick={() => navigate("/team")}>Meet the Team</li>
+                <li><button type="button" onClick={() => navigate("/team")}>Meet the Team</button></li>
               </ul>
             </div>
           )}
@@ -114,12 +125,14 @@ function Navbar() {
                 <button
                   className="profile-btn"
                   onClick={() => setShowProfileMenu(!showProfileMenu)}
+                  aria-expanded={showProfileMenu}
+                  aria-controls="profile-menu"
                 >
                   Profile
                 </button>
 
                 {showProfileMenu && (
-                  <div className="profile-dropdown">
+                  <div className="profile-dropdown" id="profile-menu">
                     <button onClick={() => navigate("/profile")}>
                       View Profile
                     </button>
@@ -136,44 +149,31 @@ function Navbar() {
           </div>
         </div>
 
-        {isLoggedIn && (
-          <div
-            className="mobile-menu-btn"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            ⋮
-          </div>
-        )}
+        <button
+          className="mobile-menu-btn"
+          type="button"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle navigation menu"
+          aria-expanded={menuOpen}
+          aria-controls="mobile-navigation"
+        >
+          ☰
+        </button>
 
-        {menuOpen && isLoggedIn && (
-          <div className="mobile-dropdown">
+        {menuOpen && (
+          <div className="mobile-dropdown" id="mobile-navigation">
             <ul>
-              <li
-                onClick={() => {
-                  navigate("/search");
-                  setMenuOpen(false);
-                }}
-              >
-                Search
-              </li>
-
-              <li
-                onClick={() => {
-                  navigate("/dashboard");
-                  setMenuOpen(false);
-                }}
-              >
-                Dashboard
-              </li>
-
-              <li
-                onClick={() => {
-                  navigate("/posts");
-                  setMenuOpen(false);
-                }}
-              >
-                Posts
-              </li>
+              {isLoggedIn ? <>
+                <li><button onClick={() => { navigate("/search"); setMenuOpen(false); }}>Search</button></li>
+                <li><button onClick={() => { navigate("/dashboard"); setMenuOpen(false); }}>Dashboard</button></li>
+                <li><button onClick={() => { navigate("/posts"); setMenuOpen(false); }}>Posts</button></li>
+                <li><button onClick={() => { navigate("/team"); setMenuOpen(false); }}>Meet the Team</button></li>
+                <li><button onClick={() => { navigate("/profile"); setMenuOpen(false); }}>View Profile</button></li>
+                <li><button onClick={() => { handleLogout(); setMenuOpen(false); }}>Logout</button></li>
+              </> : <>
+                <li><button onClick={() => { navigate("/auth", { state: { isLogin: true } }); setMenuOpen(false); }}>Login</button></li>
+                <li><button onClick={() => { navigate("/auth", { state: { isLogin: false } }); setMenuOpen(false); }}>Create Account</button></li>
+              </>}
             </ul>
           </div>
         )}

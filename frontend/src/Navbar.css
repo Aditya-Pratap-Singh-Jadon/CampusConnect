@@ -14,7 +14,7 @@ body {
   z-index: 1000;
   left: 50%;
   transform: translateX(-50%);
-  width: 100%;
+  width: calc(100% - 32px);
   backdrop-filter: blur(10px);
   display: flex;
   font-family: "Inter", sans-serif;
@@ -31,6 +31,7 @@ body {
   align-items: center;
   gap: 10px;
   padding-left: 15px;
+  min-width: 0;
 }
 .name_img img {
   height: 50px;
@@ -43,26 +44,33 @@ body {
   font-size: 1.5rem;
   font-weight: 800;
   cursor: pointer;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  white-space: nowrap;
 }
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: clamp(10px, 2vw, 30px);
   padding-right: 20px;
 }
 .nav-lists ul {
   display: flex;
   list-style: none;
-  gap: 30px;
+  gap: clamp(10px, 2vw, 30px);
 }
-.nav-lists li {
+.nav-lists li button {
   color: var(--text);
   transition: color 0.2s ease;
   font-family: "Inter", sans-serif;
   font-weight: 600;
   cursor: pointer;
+  border: 0;
+  background: transparent;
+  font-size: inherit;
 }
-.nav-lists li:hover {
+.nav-lists li button:hover {
   color: var(--navbar-hover);
 }
 .buttons {
@@ -149,6 +157,9 @@ body {
   font-size: 1.8rem;
   font-weight: bold;
   padding: 5px 10px;
+  border: 0;
+  background: transparent;
+  color: var(--text);
 }
 .mobile-dropdown {
   position: absolute;
@@ -167,13 +178,19 @@ body {
   margin: 0;
   padding: 0;
 }
-.mobile-dropdown li {
+.mobile-dropdown li button {
+  display: block;
+  width: 100%;
+  text-align: left;
   padding: 10px 20px;
   color: var(--text);
   cursor: pointer;
   transition: background-color 0.2s ease;
+  border: 0;
+  background: transparent;
+  font: inherit;
 }
-.mobile-dropdown li:hover {
+.mobile-dropdown li button:hover {
   background-color: var(--navbar-mobile-hover);
 }
 
@@ -225,14 +242,22 @@ body {
   transform: rotate(0deg) scale(1);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .navbar {
-    width: 90%;
+    padding: 10px 12px;
   }
+  .name_img { padding-left: 0; }
+  .nav-right { margin-left: auto; padding-right: 8px; }
   .nav-lists {
     display: none;
   }
+  .buttons { display: none; }
   .mobile-menu-btn {
     display: block;
   }
+}
+@media (max-width: 400px) {
+  .name_img img { width: 36px; height: 36px; }
+  .title { font-size: 1.1rem; }
+  .theme-toggle { width: 36px; height: 36px; flex: none; }
 }

@@ -4,6 +4,7 @@
  */
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import configureMongoDns from "../config/mongoDns.js";
 
 dotenv.config();
 
@@ -56,6 +57,7 @@ const OTPSchema = new mongoose.Schema({
 const OTP = mongoose.models.OTP || mongoose.model("OTP", OTPSchema, "otps");
 
 await test("Connect to MongoDB", async () => {
+  configureMongoDns();
   await mongoose.connect(process.env.MONGO_URI);
 });
 
