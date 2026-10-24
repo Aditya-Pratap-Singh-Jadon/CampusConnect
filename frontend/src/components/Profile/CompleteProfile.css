@@ -1,19 +1,19 @@
 .complete-profile-container {
   display: flex;
   justify-content: center;
-  align-items: flex-start; 
+  align-items: flex-start;
   padding: 120px 20px 60px 20px;
-  background-color: #fcfcfc;
+  background-color: var(--bg);
   min-height: 100vh;
   box-sizing: border-box;
 }
 
 .complete-profile-card {
   width: 100%;
-  max-width: 680px; 
-  background: #ffffff;
-  border: 3px solid #000000;
-  box-shadow: 6px 6px 0px #000000;
+  max-width: 680px;
+  background: var(--surface);
+  border: 3px solid var(--border);
+  box-shadow: var(--shadow-lg);
   padding: 35px;
   border-radius: 16px;
   box-sizing: border-box;
@@ -26,18 +26,18 @@
 }
 
 .form-header p {
-  color: #555555;
+  color: var(--text-secondary);
   margin: 0 0 15px 0;
   font-size: 0.95rem;
 }
 
 .form-section {
-  border: 3px solid #000000;
+  border: 3px solid var(--border);
   border-radius: 12px;
   padding: 24px;
   margin: 25px 0;
-  background: #ffffff;
-  box-shadow: 4px 4px 0px #000000;
+  background: var(--surface);
+  box-shadow: var(--shadow-md);
 }
 
 .form-section legend {
@@ -46,8 +46,8 @@
   text-transform: uppercase;
   font-size: 0.85rem;
   letter-spacing: 0.5px;
-  background: #ffffff;
-  border: 3px solid #000000;
+  background: var(--surface);
+  border: 3px solid var(--border);
   border-radius: 6px;
 }
 
@@ -79,27 +79,35 @@
   font-size: 0.95rem;
 }
 
-.input-group input, 
+.input-group input,
 .input-group textarea {
   padding: 12px 16px;
-  border: 3px solid #000000;
+  border: 3px solid var(--border);
   border-radius: 8px;
   font-size: 1rem;
   font-family: inherit;
   outline: none;
-  background-color: #ffffff;
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  background: var(--surface-alt);
+  color: var(--text);
+  transition:
+    transform 0.1s ease,
+    box-shadow 0.1s ease;
 }
 
-.input-group input:focus, 
+.input-group input:focus,
 .input-group textarea:focus {
   transform: translate(-2px, -2px);
-  box-shadow: 4px 4px 0px #000000;
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+  color: var(--text-muted);
 }
 
 .input-help-text {
   font-size: 0.8rem;
-  color: #555555;
+  color: var(--text-secondary);
   margin-top: 6px;
   font-weight: 500;
 }
@@ -109,41 +117,38 @@
   gap: 15px;
   margin-top: 30px;
 }
-
-.cancel-btn {
-  background: #ffffff;
-  border: 3px solid #000000;
-  box-shadow: 4px 4px 0px #000000;
+.save-btn, .cancel-btn {
+  border: 3px solid var(--border);
+  box-shadow: var(--shadow-sm);
   padding: 12px 24px;
   font-weight: 800;
   border-radius: 8px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition:
+  transform 0.2s ease,
+  box-shadow 0.2s ease,
+  background-color 0.2s ease;
+}
+.cancel-btn{
+  background: var(--surface);
   flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
-
-.cancel-btn:active {
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0px #000000;
+.cancel-btn:hover {
+  background: var(--surface-alt);
 }
-
 .save-btn {
+  background: var(--primary);
+  color: var(--text-on-primary);
   flex: 2;
-  padding: 12px 24px;
-  font-weight: 800;
-  border-radius: 8px;
-  border: 3px solid #000000;
-  background: #f4c430; 
-  box-shadow: 4px 4px 0px #000000;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+}
+.save-btn:hover {
+  background: var(--primary-hover);
 }
 
-.save-btn:active {
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0px #000000;
+.save-btn:active, .cancel-btn:active{
+  transform: translate(1px, 1px);
+  box-shadow: var(--shadow-none);
 }

@@ -1,8 +1,8 @@
 .marquee {
   width: 100%;
   overflow: hidden;
-  background-color: #161616;
-  color: #f9f5f3;
+  background-color: var(--marquee-bg);
+  color: var(--marquee-text);
   padding: 20px 0px;
 }
 .marquee-track {
@@ -16,6 +16,7 @@
 }
 .marquee-track:hover {
   animation-play-state: paused;
+  
 }
 
 @keyframes scroll {

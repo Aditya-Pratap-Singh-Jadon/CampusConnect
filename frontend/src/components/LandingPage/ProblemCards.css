@@ -1,10 +1,10 @@
 .problem-card {
   flex: 1;
   padding: 25px;
-  border: 2px solid black;
+  border: 2px solid var(--border);
   border-radius: 20px;
-  background-color: aliceblue;
-  box-shadow: 4px 4px 0px black;
+  background-color: var(--problem-card-bg);
+  box-shadow: var(--shadow-md);
   transition: 0.3s ease;
 }
 .problem-card:hover {
@@ -18,16 +18,16 @@
   align-items: center;
   justify-content: center;
 
-  border: 2px solid black;
+  border: 2px solid var(--border);
   border-radius: 14px;
 
-  background: #fff4d6;
+  background: var(--problem-icon-bg);
   margin-bottom: 18px;
 }
 
 .icon svg {
   font-size: 30px;
-  color: #111;
+  color: var(--text);
 }
 
 .problem-card-title {
@@ -37,7 +37,7 @@
   margin-bottom: 15px;
 }
 .problem-card-description {
-  color: #555555;
+  color:var(--text-secondary);
   font-family: "Inter", sans-serif;
   font-weight: 500;
   line-height: 1.7;

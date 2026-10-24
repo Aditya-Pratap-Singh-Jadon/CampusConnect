@@ -51,7 +51,7 @@ function LandingPage() {
 function AppLayout({ children }) {
   return (
     <>
-      <Navbar />'
+      <Navbar />
       <main className="app-content">
         <Suspense fallback={<PageLoader />}>{children}</Suspense>
       </main>

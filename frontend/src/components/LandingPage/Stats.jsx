@@ -32,9 +32,17 @@ function Stats() {
 
   return (
     <div className="outer-container">
-      <StatCard num={`${stats.students}+`} tag="Active Students" bgcolor="#d5e6e1" />
-      <StatCard num={`${stats.alumni}+`} tag="Alumni" bgcolor="#ffb648" />
-      <StatCard num="0+" tag="Teams Formed" bgcolor="#d5e6e1" />
+      <StatCard
+        num={`${stats.students}+`}
+        tag="Active Students"
+        bgcolor="var(--stat-card-students)"
+      />
+      <StatCard
+        num={`${stats.alumni}+`}
+        tag="Alumni"
+        bgcolor="var(--stat-card-alumni)"
+      />
+      <StatCard num="0+" tag="Teams Formed" bgcolor="var(--stat-card-teams)" />
     </div>
   );
 }

@@ -1,250 +1,274 @@
-.search-page{
-    padding-top: 110px;
-    padding-left: 30px;
-    font-family: 'Inter', sans-serif;
-    padding-right: 30px;
+.search-page {
+  padding-top: 110px;
+  padding-left: 30px;
+  font-family: "Inter", sans-serif;
+  padding-right: 30px;
 }
-.search-hero{
-    text-align: center;
-    margin-bottom: 3rem;
+.search-hero {
+  text-align: center;
+  margin-bottom: 3rem;
 }
-
 .search-hero h1,
 .discovery-header h2,
-.role-badge{
-    font-family: 'Outfit', sans-serif;
+.role-badge {
+  font-family: "Outfit", sans-serif;
 }
-.search-hero h1{
-    font-size: 4rem;
-    font-weight: 800;
-}
-
-.first-span{
-    background-color: #f4c543;
-    padding: 4px 8px;
-    transform: rotate(-2deg);
-    display: inline-block;
-    border: 2px solid black;
-
-}
-.search-hero p{
-    max-width: 700px;
-    margin: 15px auto;
-}
-.search-box{
-    width: 900px;
-    max-width: 100%;
-    margin: 30px auto 0;
-    
-    display: flex;
-    align-items: center;
-    background-color: white;
-    border: 2px solid black;
-    border-radius: 14px;
-    box-shadow: 8px 8px 0 #000000;
-    overflow: hidden;
-    gap: 15px;
-    margin-top: 30px;
-}
-.search-icon{
-    padding-left:20px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#666;
-    font-size:1.2rem;
+.search-hero h1 {
+  font-size: 4rem;
+  font-weight: 800;
 }
 
-.search-box input{
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 22px 0;
-    font-size: 1rem;
+.first-span {
+  background-color: var(--primary);
+  color: var(--text-on-primary);
+  padding: 4px 8px;
+  transform: rotate(-2deg);
+  display: inline-block;
+  border: 2px solid var(--border);
+}
+.search-hero p {
+  max-width: 700px;
+  margin: 15px auto;
+  color: var(--text-secondary);
+}
+.search-box {
+  width: 900px;
+  max-width: 100%;
+  margin: 30px auto 0;
+  display: flex;
+  align-items: center;
+  background-color: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  gap: 15px;
+  margin-top: 30px;
+}
+.search-icon {
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 1.2rem;
 }
 
-.search-btn{
-    margin: 12px;
-    padding: 10px 30px;
-    border:none;
-    border-radius: 8px;
-    background-color: #111111;
-    color: white;
-    font-size: 1.3rem;
-    font-weight: 600;
-    cursor: pointer;
+.search-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 22px 0;
+  font-size: 1rem;
+  background: transparent;
+  color: var(--text);
 }
 
-.discovery-section{
-    display: flex;
-    gap: 100px;
-    align-items: flex-start;
+.search-btn {
+  margin: 12px;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
 }
-.sidebar{
-    margin-left: 40px;
-    width: 250px;
-    border: 2px solid black;
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 4px 4px 0 #000000;
-    height: fit-content;
+.search-btn:hover{
+    background: var(--btn-hover);
 }
-.sidebar label{
-    display: block;
-    margin: 12px 0;
-}
-.active-domain{
-    background-color: #f4c542 !important;
-    font-weight: 600;
-}
-.discovery-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 15px;
-    margin-bottom: 25px;
-    border-bottom: 2px solid #111111;
-    max-width: 1150px;
-}
-.discovery-header h2{
-    display:flex;
-    align-items:center;
-    gap:10px;
+.search-box input::placeholder{
+    color: var(--text-muted);
 }
 
-.discovery-content{
-    flex: 1;
+.discovery-section {
+  display: flex;
+  gap: 100px;
+  align-items: flex-start;
 }
-.results-count{
-    padding: 6px 16px;
-    border: 2px solid #111111;
-    border-radius: 20px;
-    background-color: white;
-    font-weight: 600;
+.sidebar {
+  margin-left: 40px;
+  width: 250px;
+  border: 2px solid var(--border);
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  height: fit-content;
+  background: var(--surface);
 }
-.load-more-container{
-    display: flex;
-    justify-content: center;
-    margin-top: 35px;
+.sidebar label {
+  display: block;
+  margin: 12px 0;
 }
-
-.load-more-btn{
-    padding: 14px 32px;
-    border: 2px solid #111111;
-    border-radius: 14px;
-    background-color: white;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 2px 2px 1px #000000;
+.active-domain {
+  background-color: var(--primary) !important;
+  color:var(--text-on-primary);
+  font-weight: 600;
 }
-.load-more-btn:hover{
-    transform: translate(-1px,-1px);
+.discovery-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+  border-bottom: 2px solid var(--border);
+  max-width: 1150px;
 }
-
-.cards-grid{
-    display: flex;
-    gap: 48px;
-    flex-wrap: wrap;
-}
-.user-card{
-    width: 300px;
-    min-height: 420px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    border: 2px solid #111111;
-    box-shadow: 6px 6px 0px #000000;
-    border-radius: 16px;
-    overflow: hidden;
-    background-color: white;
-    transition: 0.2s ease;
-}
-.user-card:hover{
-    transform: translate(-2px,-2px);
-}
-.card-banner{
-    height: 120px;
-    background-color: #f4c542;
+.discovery-header h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.card-avatar{
-    width:80px;
-    height:80px;
-    object-fit:cover;
-    border-radius:12px;
-    margin-left:20px;
-    margin-top:-40px;
-    border:4px solid white;
+.discovery-content {
+  flex: 1;
 }
-.card-content{
-    padding: 15px;
-    flex: 1;
+.results-count {
+  padding: 6px 16px;
+  border: 2px solid var(--border);
+  border-radius: 20px;
+  background-color: var(--surface);
+  font-weight: 600;
+  color: var(--text);
 }
-
-.skill-tags{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 15px;
-}
-.skill-tags span{
-    border:1px solid #111;
-    border-radius:90px;
-    padding:5px 14px;
-    font-size:0.85rem;
+.load-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
 }
 
-.card-actions{
-    display: flex;
-    gap: 10px;
-    width: 90%;
-    margin: 15px auto;
+.load-more-btn {
+  padding: 14px 32px;
+  border: 2px solid var(--border);
+  border-radius: 14px;
+  background-color: var(--surface);
+  color: var(--text-on-dark);
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm)
 }
-.connect-btn{
-    flex: 1;
-    padding: 12px;
-    border: none;
-    border-radius: 10px;
-    background: #111111;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-}
-.profile-btn-card{
-    flex: 1;
-    padding: 12px;
-    border: 2px solid black;
-    border-radius: 10px;
-    background: white;
-    color: #111111;
-    font-weight: 600;
-    cursor: pointer;
+.load-more-btn:hover {
+  transform: translate(-1px, -1px);
 }
 
-.domain-tags{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 15px;
+.cards-grid {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
 }
-.domain-tags button{
-    border: 1px solid #1f1f1f;
-    border-radius: 90px;
-    padding: 6px 12px;
-    background-color: whitesmoke;
-    cursor: pointer;
+.user-card {
+  width: 300px;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 2px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: var(--surface);
+  transition:
+    background .2s ease,
+    transform .2s ease,
+    color .2s ease;
 }
-.role-badge{
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background-color: white;
-    border: 1px solid #111111;
-    border-radius: 10px;
-    padding: 4px 10px;
-    font-size: 15px;
-    font-weight: 600;
-}.role-filters {
+.user-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow:5px 5px 0 var(--border);
+}
+.card-banner {
+  height: 120px;
+  background-color: var(--primary);
+  color: var(--text-on-primary);
+}
+
+.card-avatar {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-left: 20px;
+  margin-top: -40px;
+  border: 4px solid var(--surface);
+}
+.card-content {
+  padding: 15px;
+  flex: 1;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+.skill-tags span {
+  border: 1px solid var(--border);
+  border-radius: 90px;
+  padding: 5px 14px;
+  font-size: 0.85rem;
+}
+
+.card-actions {
+  display: flex;
+  gap: 10px;
+  width: 90%;
+  margin: 15px auto;
+}
+.connect-btn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  font-weight: 600;
+  cursor: pointer;
+}
+.connect-btn:hover{
+    background: var(--btn-hover);
+}
+
+.profile-btn-card {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.domain-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+.domain-tags button {
+  border: 1px solid var(--border);
+  border-radius: 90px;
+  padding: 6px 12px;
+  background: var(--surface-alt);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.role-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 4px 10px;
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 600;
+}
+.role-filters {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -252,22 +276,28 @@
 }
 
 .role-filters button {
-  border: 2px solid #111111;
+  border: 2px solid var(--border);
   border-radius: 12px;
   padding: 10px;
-  background: white;
+  background: var(--surface);
+  
   cursor: pointer;
   font-weight: 600;
-  transition: all 0.2s ease;
+  transition:
+    background .2s ease,
+    transform .2s ease,
 }
 
 .role-filters button:hover {
   transform: translateY(-1px);
 }
-
+.nonactive-role{
+  color:var(--text-on-dark);
+}
 .active-role {
-  background: #f4c542 !important;
-  box-shadow: 2px 2px 0 #111111;
+  background: var(--primary) !important;
+  color:var(--text-on-primary);
+  box-shadow: var(--shadow-sm);
 }
 
 @media (max-width: 1024px) {

@@ -3,27 +3,27 @@
   padding: 0;
   box-sizing: border-box;
 }
-.body {
-  background-color: #fbfaf2;
+body {
+  background: var(--bg);
+  color: var(--text);
 }
 .navbar {
   position: fixed;
-  top: 1%;
+  top: 16px;
   max-width: 1200px;
   z-index: 1000;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
   backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.2);
   display: flex;
   font-family: "Inter", sans-serif;
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
-  background-color: #f8fbff;
+  background-color: var(--navbar-bg);
   border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px var(--navbar-shadow);
 }
 
 .name_img {
@@ -38,6 +38,7 @@
 }
 
 .title {
+  color: var(--text);
   font-family: "Outfit", sans-serif;
   font-size: 1.5rem;
   font-weight: 800;
@@ -55,12 +56,14 @@
   gap: 30px;
 }
 .nav-lists li {
+  color: var(--text);
+  transition: color 0.2s ease;
   font-family: "Inter", sans-serif;
   font-weight: 600;
   cursor: pointer;
 }
 .nav-lists li:hover {
-  color: #2563eb;
+  color: var(--navbar-hover);
 }
 .buttons {
   display: flex;
@@ -75,8 +78,16 @@
   font-weight: 600;
 }
 .get-started {
-  color: aliceblue;
-  background-color: #161616;
+  color: var(--btn-text);
+  background: var(--navbar-btn-bg);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+.get-started:hover {
+  background: var(--navbar-btn-hover);
+  transform: translateY(-1px);
 }
 .login {
   border: none;
@@ -86,7 +97,7 @@
   transition: color 0.2s ease;
 }
 .login:hover {
-  color: #2563eb;
+  color: var(--navbar-hover);
 }
 .profile-dropdown-wrapper {
   position: relative;
@@ -101,9 +112,10 @@
   font-family: "Inter", sans-serif;
   font-weight: 600;
   color: inherit;
+  transition: color 0.2s ease;
 }
 .profile-btn:hover {
-  color: #2563eb;
+  color: var(--navbar-hover);
 }
 .profile-dropdown {
   position: absolute;
@@ -114,21 +126,22 @@
   font-family: "Inter", sans-serif;
   font-weight: 600;
   min-width: 180px;
-  background-color: white;
+  background-color: var(--navbar-dropdown-bg);
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px var(--navbar-shadow);
   overflow: hidden;
   z-index: 1002;
 }
 .profile-dropdown button {
   border: none;
-  background-color: white;
+  background-color: var(--navbar-dropdown-bg);
   padding: 12px 16px;
   text-align: left;
+  color: var(--text);
   cursor: pointer;
 }
 .profile-dropdown button:hover {
-  background-color: #fff4f4;
+  background-color: var(--navbar-dropdown-hover);
 }
 .mobile-menu-btn {
   display: none;
@@ -144,9 +157,9 @@
   min-width: 180px;
   right: 10px;
   margin-top: 10px;
-  background-color: rgb(255, 244, 217);
+  background-color: var(--navbar-mobile-bg);
   border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px var(--navbar-shadow);
   z-index: 1001;
 }
 .mobile-dropdown ul {
@@ -156,11 +169,60 @@
 }
 .mobile-dropdown li {
   padding: 10px 20px;
+  color: var(--text);
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
 .mobile-dropdown li:hover {
-  background-color: #ffe185;
+  background-color: var(--navbar-mobile-hover);
+}
+
+.theme-toggle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--bg);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  overflow: hidden;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.theme-toggle:hover {
+  background: var(--surface-hover);
+}
+.theme-icon {
+  position: absolute;
+  transition:
+    transform 0.45s ease,
+    opacity 0.35s ease;
+  transform-origin: center;
+}
+
+.sun {
+  opacity: 0;
+  transform: rotate(-180deg) scale(0.5);
+}
+.sun.active {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+.moon {
+  opacity: 0;
+  transform: rotate(180deg) scale(0.5);
+}
+.moon.active {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
 }
 
 @media (max-width: 768px) {

@@ -26,18 +26,18 @@
 .right-hero img {
   width: 100%; /*Image to respond with size*/
   max-width: 500px;
-  border: 3px solid black;
+  border: 3px solid var(--border);
   border-radius: 20px;
-  box-shadow: 6px 6px 0px black;
+  box-shadow: var(--shadow-lg);
 }
 .topcard {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 8px 16px;
-  border: 2px solid black;
+  border: 2px solid var(--border);
   border-radius: 90px;
-  background-color: #b0b0b0;
+  background:var(--surface-alt);
 }
 .topcard h6 {
   font-family: 'Inter', sans-serif;
@@ -46,6 +46,7 @@
 .topcard img {
   width: 20px;
   height: 20px;
+  background-color: azure;
 }
 .heading h1 {
   margin-top: 15px;
@@ -55,17 +56,19 @@
   line-height: 1.4;
 }
 .card2 {
-  background-color: #ffcb21;
+  background-color: var(--primary);
+  color: var(--text-on-primary);
   padding: 0 8px;
-  border: 3px solid black;
-  box-shadow: 1px 1px 5px #000000;
+  border: 3px solid var(--border);
+  box-shadow:var(--shadow-vsm);
   white-space: nowrap;
 }
 .card3 {
-  background-color: #ffb74d;
+  background:var(--primary-hover);
+  color: var(--text-on-primary);
   padding: 0px 8px;
-  border: 3.5px solid black;
-  box-shadow: 1px 1px 5px #000000;
+  border: 3.5px solid var(--border);
+  box-shadow:var(--shadow-vsm);
   white-space: nowrap;
 }
 .hero-description {
@@ -74,7 +77,7 @@
   font-family: 'Inter', sans-serif;
   font-weight: 500;
   line-height: 1.7;
-  color: #555555;
+  color:var(--text-secondary);
 }
 
 .hero-buttons {
@@ -96,20 +99,21 @@
   justify-content: center;
   gap: 6px;
   padding: 15px 25px;
-  border: 2px solid black;
+  border: 2px solid var(--border);
   border-radius: 12px;
-  background-color: #ffd54f;
+  background-color: var(--primary);
+  color: var(--text-on-primary);
   cursor: pointer;
   font-size: 1.2rem;
   font-weight: bold;
   font-style: italic;
-  box-shadow: 3px 3px 0px black;
+  box-shadow:var(--shadow-sm);
 }
 .have-acc {
   padding: 15px 25px;
   align-items: center;
   justify-content: center;
-  border: 2px solid black;
+  border: 2px solid var(--border);
   border-radius: 12px;
   font-size: 1.2rem;
   font-weight: bold;
@@ -117,7 +121,7 @@
   cursor: pointer;
 }
 .no-acc:hover {
-  background-color: #ffd034;
+  background-color:var(--primary-hover);
 }
 
 .demo-skills {
@@ -131,7 +135,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid black;
+  color: var(--text-on-primary);
+  border: 2px solid var(--border);
   border-radius: 90px;
   padding: 7px 15px;
   gap: 8px;

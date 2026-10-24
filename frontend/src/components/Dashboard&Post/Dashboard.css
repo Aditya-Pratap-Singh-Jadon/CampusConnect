@@ -23,10 +23,11 @@
 }
 
 .dashboard-name {
-  background-color: #f4c543;
+  background-color: var(--primary);
+  color: var(--text-on-primary);
   padding: 4px 10px;
   display: inline-block;
-  border: 2px solid black;
+  border: 2px solid var(--border);
   transform: rotate(-1deg);
   font-family: 'Outfit', sans-serif;
   font-weight: 800;
@@ -34,7 +35,7 @@
 }
 
 .dashboard-header p {
-  color: #444444;
+  color: var(--text-secondary);
   font-size: 1.05rem;
   max-width: 600px;
   margin: 0 auto;
@@ -53,13 +54,14 @@
   align-items: center;
   gap: 8px;
   padding: 12px 22px;
-  border: 2px solid #111111;
+  border: 2px solid var(--border);
   border-radius: 12px;
-  background-color: white;
+  background-color: var(--surface);
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 3px 3px 0 #000000;
+  box-shadow: var(--shadow-sm);
+  color: var(--text);
   transition: transform 0.15s ease;
 }
 
@@ -68,7 +70,8 @@
 }
 
 .dashboard-tab-active {
-  background-color: #f4c542;
+  background-color: var(--primary);
+  color: var(--text-on-primary);
 }
 
 .dashboard-tab-icon {
@@ -98,7 +101,7 @@
   font-weight: 700;
   margin-bottom: 1.5rem;
   padding-bottom: 12px;
-  border-bottom: 2px solid #111111;
+  border-bottom: 2px solid var(--border);
 }
 
 .dashboard-subsection-title {
@@ -107,7 +110,7 @@
   margin-top: 2.5rem;
   margin-bottom: 1.25rem;
   padding-bottom: 10px;
-  border-bottom: 2px solid #111111;
+  border-bottom: 2px solid var(--border);
 }
 
 .dashboard-cards {
@@ -117,16 +120,17 @@
 }
 
 .dashboard-card {
-  border: 2px solid #111111;
+  border: 2px solid var(--border);
   border-radius: 16px;
-  box-shadow: 6px 6px 0 #000000;
-  background-color: white;
+  box-shadow: var(--shadow-lg);
+  background-color: var(--surface);
   padding: 20px;
   transition: transform 0.2s ease;
 }
 
 .dashboard-card:hover {
-  transform: translate(-2px, -2px);
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 var(--border);
 }
 
 .dashboard-card-title {
@@ -141,7 +145,7 @@
 
 .dashboard-type-tag {
   display: inline-block;
-  border: 1px solid #111111;
+  border: 1px solid var(--border);
   border-radius: 90px;
   padding: 4px 12px;
   font-size: 0.9rem;
@@ -158,14 +162,14 @@
 
 .dashboard-card-detail {
   font-size: 0.95rem;
-  color: #333333;
+  color: var(--text-secondary);
   margin-bottom: 6px;
 }
 
 .dashboard-card-footer {
   margin-top: 14px;
   padding-top: 12px;
-  border-top: 1px solid #dddddd;
+  border-top: 1px solid var(--border);
 }
 
 .dashboard-badge {
@@ -174,22 +178,22 @@
   border-radius: 90px;
   font-size: 0.85rem;
   font-weight: 600;
-  border: 1px solid #111111;
+  border: 1px solid var(--border);
 }
 
 .dashboard-badge-pending {
-  background-color: #fef3c7;
-  color: #92400e;
+  background: var(--warning);
+    color: var(--warning-text);
 }
 
 .dashboard-badge-approved {
-  background-color: #dcfce7;
-  color: #166534;
+  background: var(--success);
+    color: var(--success-text);
 }
 
 .dashboard-badge-rejected {
-  background-color: #fee2e2;
-  color: #991b1b;
+  background: var(--error);
+    color: var(--error-text);
 }
 
 .dashboard-mentor-row {
@@ -203,8 +207,9 @@
   width: 52px;
   height: 52px;
   border-radius: 8px;
-  background-color: #f4c542;
-  border: 2px solid #111111;
+  background-color: var(--primary);
+  color: var(--text-on-primary);
+  border: 2px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -230,10 +235,10 @@
 }
 
 .dashboard-post-card {
-  border: 2px solid #111111;
+  border: 2px solid var(--border);
   border-radius: 16px;
-  box-shadow: 6px 6px 0 #000000;
-  background-color: white;
+  box-shadow: var(--shadow-lg);
+  background-color: var(--surface);
   padding: 22px;
 }
 
@@ -248,14 +253,15 @@
 .dashboard-post-date {
   margin-left: 10px;
   font-size: 0.9rem;
-  color: #555555;
+  color: var(--text-secondary);
 }
 
 .dashboard-applicant-count {
   padding: 6px 16px;
-  border: 2px solid #111111;
+  border: 2px solid var(--border);
   border-radius: 20px;
-  background-color: white;
+  background-color: var(--surface);
+  color: var(--text);
   font-weight: 600;
   font-size: 0.9rem;
   white-space: nowrap;
@@ -264,23 +270,23 @@
 .dashboard-expand-btn {
   margin-top: 16px;
   padding: 10px 20px;
-  border: 2px solid #111111;
+  border: 2px solid var(--border);
   border-radius: 10px;
-  background-color: #111111;
-  color: white;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
   font-weight: 600;
   cursor: pointer;
   width: 100%;
 }
 
 .dashboard-expand-btn:hover {
-  background-color: #222222;
+  background-color: var(--btn-hover);
 }
 
 .dashboard-applicants {
   margin-top: 18px;
   padding-top: 18px;
-  border-top: 2px solid #eeeeee;
+  border-top: 2px solid var(--border);
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -293,10 +299,13 @@
   gap: 16px;
   flex-wrap: wrap;
   padding: 14px;
-  border: 1px solid #dddddd;
+  border: 1px solid var(--border);
   border-radius: 12px;
-  background-color: #fafafa;
+  background-color: var(--surface-alt);
 }
+/* .dashboard-applicant-row:hover{
+    background: var(--surface);
+} */
 
 .dashboard-applicant-info {
   display: flex;
@@ -316,11 +325,12 @@
 }
 
 .dashboard-skill-tags span {
-  border: 1px solid #111111;
+  border: 1px solid var(--border);
   border-radius: 90px;
   padding: 3px 10px;
   font-size: 0.8rem;
-  background-color: white;
+  background-color: var(--surface);
+  color: var(--text);
 }
 
 .dashboard-applicant-actions {
@@ -332,7 +342,7 @@
 .dashboard-btn-approve,
 .dashboard-btn-reject {
   padding: 8px 18px;
-  border: 2px solid #111111;
+  border: 2px solid var(--border);
   border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
@@ -340,8 +350,8 @@
 }
 
 .dashboard-btn-approve {
-  background-color: #dcfce7;
-  color: #166534;
+  background: var(--success);
+    color: var(--success-text);
 }
 
 .dashboard-btn-approve:hover {
@@ -349,8 +359,8 @@
 }
 
 .dashboard-btn-reject {
-  background-color: #fee2e2;
-  color: #991b1b;
+  background: var(--error);
+    color: var(--error-text);
 }
 
 .dashboard-btn-reject:hover {
@@ -374,8 +384,8 @@
 .dashboard-spinner {
   width: 40px;
   height: 40px;
-  border: 3px solid #eeeeee;
-  border-top-color: #111111;
+  border: 3px solid var(--surface-alt);
+  border-top-color: var(--border);
   border-radius: 50%;
   animation: dashboard-spin 0.8s linear infinite;
 }
@@ -389,19 +399,19 @@
 .dashboard-empty {
   text-align: center;
   padding: 40px 20px;
-  color: #666666;
+  color: var(--text-secondary);
   font-size: 1.05rem;
-  border: 2px dashed #cccccc;
+  border: 2px dashed var(--border);
   border-radius: 12px;
-  background-color: #fafafa;
+  background-color: var(--surface-alt);
 }
 
 .dashboard-error {
   text-align: center;
   padding: 20px;
-  color: #991b1b;
-  background-color: #fee2e2;
-  border: 2px solid #991b1b;
+  background: var(--error);
+    color: var(--error-text);
+    border:2px solid var(--error-border);
   border-radius: 12px;
   font-weight: 600;
 }
